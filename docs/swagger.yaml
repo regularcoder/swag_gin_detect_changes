@@ -1,0 +1,29 @@
+definitions:
+  model.HelloRequest:
+    properties:
+      name:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a sample server.
+  title: Example API
+  version: "1.0"
+paths:
+  /hello:
+    post:
+      description: Says hello to a specified name
+      parameters:
+      - description: name to say hello to
+        in: body
+        name: HelloRequest
+        required: true
+        schema:
+          $ref: '#/definitions/model.HelloRequest'
+      produces:
+      - application/json
+      summary: Say hello
+      tags:
+      - conversation
+swagger: "2.0"

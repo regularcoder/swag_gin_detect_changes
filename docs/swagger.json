@@ -1,0 +1,45 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample server.",
+        "title": "Example API",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "paths": {
+        "/hello": {
+            "post": {
+                "description": "Says hello to a specified name",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "conversation"
+                ],
+                "summary": "Say hello",
+                "parameters": [
+                    {
+                        "description": "name to say hello to",
+                        "name": "HelloRequest",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.HelloRequest"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "definitions": {
+        "model.HelloRequest": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
